@@ -4,29 +4,44 @@
 
 ```
 design/
-├── tokens/           # CSS変数 + Tailwindプリセット
-├── packages/ui/      # React コンポーネント (動き系のみ)
+├── src/              # Token定義 (TypeScript)
+├── dist/             # ビルド出力
+│   ├── index.js      # JSトークン
+│   ├── tokens.css    # CSS変数
+│   └── preset.js     # Tailwindプリセット
+├── packages/ui/      # React コンポーネント
 └── docs/             # プレビューサイト (コピペ元)
+```
+
+## Installation
+
+### 他プロジェクトから使う
+
+```bash
+# npm link (ローカル開発)
+cd /path/to/design && npm link
+cd /path/to/your-project && npm link @takayaso/tokens
+
+# UI も使う場合
+cd /path/to/design/packages/ui && npm link
+cd /path/to/your-project && npm link @takayaso/ui
 ```
 
 ## Usage
 
-### 1. Tokens (CSS Variables + Tailwind Preset)
-
-```bash
-# Install (npm link or copy)
-npm link ./tokens
-```
+### 1. CSS Variables
 
 ```css
 /* styles.css */
-@import '@takayaso/tokens/variables.css';
+@import '@takayaso/tokens/css';
 
-/* Override per project */
+/* プロジェクトごとに上書き */
 :root {
-  --color-bg-base: #fef3c7;
+  --color-background-light: #fef3c7;
 }
 ```
+
+### 2. Tailwind Preset
 
 ```js
 // tailwind.config.js
@@ -37,11 +52,15 @@ export default {
 }
 ```
 
-### 2. React Components
+### 3. JavaScript/TypeScript
 
-```bash
-npm link ./packages/ui
+```ts
+import { colors, spacing, typography } from '@takayaso/tokens'
+
+console.log(colors.gray[900]) // '#171717'
 ```
+
+### 4. React Components
 
 ```tsx
 import { Modal, ModalHeader, ModalBody, Toast, useToast } from '@takayaso/ui'
@@ -58,40 +77,46 @@ function App() {
 }
 ```
 
-### 3. Preview Site (Copy-paste reference)
+### 5. Preview Site (Copy-paste reference)
 
 ```bash
 cd docs && npm run dev
 ```
 
-Open http://localhost:5173 and copy Tailwind classes from components.
+http://localhost:5173 でコンポーネントを確認、Tailwindクラスをコピペ。
 
-## Components
+## React Components
 
-| Component | Type | Description |
-|-----------|------|-------------|
-| Modal | React | Dialog with backdrop |
-| Dropdown | React | Click-triggered dropdown menu |
-| Accordion | React | Expandable sections |
-| Toast | React | Notification popups |
-| MobileMenu | React | Slide-in mobile navigation |
+| Component | Description |
+|-----------|-------------|
+| Modal, ModalHeader, ModalBody, ModalFooter | Dialog with backdrop |
+| Dropdown, DropdownItem, DropdownDivider | Click-triggered menu |
+| Accordion, AccordionItem | Expandable sections |
+| Toast, useToast | Notification popups |
+| MobileMenu, HamburgerButton, MobileMenuItem | Mobile navigation |
 
-## Color Override Example
+## Color Override Examples
 
 ```css
 /* Project A - Warm theme */
 :root {
-  --color-bg-base: #fef3c7;
-  --color-bg-gradient-from: #fef3c7;
-  --color-bg-gradient-via: #fde68a;
-  --color-bg-gradient-to: #fcd34d;
+  --color-background-light: #fef3c7;
+  --color-gray-100: #fef3c7;
+  --color-gray-200: #fde68a;
 }
 
 /* Project B - Cool theme */
 :root {
-  --color-bg-base: #e0f2fe;
-  --color-bg-gradient-from: #e0f2fe;
-  --color-bg-gradient-via: #bae6fd;
-  --color-bg-gradient-to: #7dd3fc;
+  --color-background-light: #e0f2fe;
+  --color-gray-100: #e0f2fe;
+  --color-gray-200: #bae6fd;
 }
+```
+
+## Build
+
+```bash
+npm run build        # tokens のみ
+npm run build:ui     # UI のみ
+npm run build:all    # 両方
 ```

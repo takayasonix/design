@@ -1,7 +1,7 @@
 {
-  "name": "@design/tokens",
-  "version": "0.1.0",
-  "description": "Design system tokens - colors, fonts, spacing",
+  "name": "@takayaso/tokens",
+  "version": "1.0.0",
+  "description": "Design system tokens for takayaso.com",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -11,14 +11,21 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./css": "./dist/tokens.css"
+    "./css": "./dist/tokens.css",
+    "./preset": "./dist/preset.js"
   },
   "files": [
     "dist"
   ],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts && npm run build:css",
+    "build": "tsup src/index.ts --format cjs,esm --dts && npm run build:css && npm run build:preset",
     "build:css": "node scripts/build-css.js",
+    "build:preset": "node scripts/build-preset.js",
+    "build:ui": "npm -w @takayaso/ui run build",
+    "build:all": "npm run build && npm run build:ui",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
@@ -28,7 +35,9 @@
   "keywords": [
     "design-system",
     "tokens",
-    "css-variables"
+    "css-variables",
+    "tailwind"
   ],
+  "author": "takayaso",
   "license": "MIT"
 }
