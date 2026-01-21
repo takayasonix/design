@@ -314,23 +314,130 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <!-- Blockquote -->
       <div class="mb-8">
         <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Blockquote</h3>
-        <blockquote class="border-l-4 border-gray-300 pl-6 py-2 bg-gray-50 rounded-r-xl">
-          <p class="text-gray-700 italic leading-relaxed">
-            「引用テキストはこのようにスタイリングされます。左ボーダーとグレー背景で視覚的に区別します。」
+        <blockquote class="border-l-4 border-gray-400 pl-6 py-3 bg-gray-50 rounded-r-xl">
+          <p class="text-gray-700 leading-relaxed">
+            引用テキストはこのようにスタイリングされます。左ボーダーとグレー背景で視覚的に区別します。
           </p>
-          <cite class="text-sm text-gray-500 mt-2 block">— 引用元</cite>
+          <cite class="text-sm text-gray-500 mt-2 block not-italic">— 引用元</cite>
         </blockquote>
       </div>
 
-      <!-- Code Block -->
+      <!-- Message Boxes (Zenn style) -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Message Box (Zenn style)</h3>
+        <div class="space-y-4">
+          <!-- Info -->
+          <div class="flex gap-3 p-4 bg-blue-50 border border-blue-200 rounded-xl">
+            <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div class="text-blue-800 text-sm leading-relaxed">
+              <strong class="font-bold">Info:</strong> 補足情報や参考になる内容を伝えるときに使います。
+            </div>
+          </div>
+          <!-- Warning -->
+          <div class="flex gap-3 p-4 bg-yellow-50 border border-yellow-200 rounded-xl">
+            <div class="flex-shrink-0 w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+              </svg>
+            </div>
+            <div class="text-yellow-800 text-sm leading-relaxed">
+              <strong class="font-bold">Warning:</strong> 注意が必要な内容を伝えるときに使います。
+            </div>
+          </div>
+          <!-- Alert/Danger -->
+          <div class="flex gap-3 p-4 bg-red-50 border border-red-200 rounded-xl">
+            <div class="flex-shrink-0 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+            <div class="text-red-800 text-sm leading-relaxed">
+              <strong class="font-bold">Alert:</strong> 重要な警告や危険な操作について伝えるときに使います。
+            </div>
+          </div>
+          <!-- Tip -->
+          <div class="flex gap-3 p-4 bg-green-50 border border-green-200 rounded-xl">
+            <div class="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <div class="text-green-800 text-sm leading-relaxed">
+              <strong class="font-bold">Tip:</strong> 便利な情報やおすすめの方法を伝えるときに使います。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Block with Language Label -->
       <div class="mb-8">
         <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Code Block</h3>
-        <pre class="bg-gray-900 text-gray-100 p-4 rounded-xl overflow-x-auto font-mono text-sm leading-relaxed"><code>// コードブロックのサンプル
-function greet(name: string): string {
-  return \`Hello, \${name}!\`;
+        <div class="relative">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-gray-700 text-gray-300 text-xs font-mono rounded-bl-lg rounded-tr-xl">TypeScript</div>
+          <pre class="bg-gray-900 text-gray-100 p-4 pt-8 rounded-xl overflow-x-auto font-mono text-sm leading-relaxed"><code><span class="text-gray-500">// コードブロックのサンプル</span>
+<span class="text-purple-400">function</span> <span class="text-blue-300">greet</span>(<span class="text-orange-300">name</span>: <span class="text-green-300">string</span>): <span class="text-green-300">string</span> {
+  <span class="text-purple-400">return</span> <span class="text-yellow-200">\`Hello, \${</span><span class="text-orange-300">name</span><span class="text-yellow-200">}!\`</span>;
 }
 
-console.log(greet('World'));</code></pre>
+<span class="text-blue-300">console</span>.<span class="text-yellow-300">log</span>(<span class="text-blue-300">greet</span>(<span class="text-yellow-200">'World'</span>));</code></pre>
+        </div>
+      </div>
+
+      <!-- Details / Accordion (Zenn style) -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Details / Accordion</h3>
+        <details class="group bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-100 transition-colors">
+            <span class="font-medium text-gray-900">クリックして詳細を表示</span>
+            <svg class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="p-4 pt-0 text-gray-700 leading-relaxed border-t border-gray-200">
+            <p>折りたたまれた詳細コンテンツがここに表示されます。長い補足説明やコードサンプルなどを隠しておくのに便利です。</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Link Card (note/Zenn style embed) -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Link Card</h3>
+        <a href="#" class="block border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white">
+          <div class="flex">
+            <div class="flex-1 p-4">
+              <h4 class="font-bold text-gray-900 mb-1 line-clamp-2">記事タイトルがここに入ります - リンクカードのサンプル</h4>
+              <p class="text-sm text-gray-500 line-clamp-2 mb-2">記事の説明文がここに表示されます。OGPのdescriptionから取得される内容です。</p>
+              <div class="flex items-center gap-2 text-xs text-gray-400">
+                <img src="https://via.placeholder.com/16" alt="" class="w-4 h-4 rounded">
+                <span>example.com</span>
+              </div>
+            </div>
+            <div class="w-32 h-24 bg-gray-100 flex-shrink-0">
+              <div class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-400">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Image with Caption (note style) -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Image with Caption</h3>
+        <figure class="text-center">
+          <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl h-48 flex items-center justify-center text-gray-400 mb-2">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <figcaption class="text-sm text-gray-500">画像のキャプションがここに表示されます</figcaption>
+        </figure>
       </div>
 
       <!-- Horizontal Rule -->
