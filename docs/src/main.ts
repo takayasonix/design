@@ -679,6 +679,423 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>
     </section>
 
+    <!-- Layout Components Section -->
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4">Layout Components</h2>
+
+      <!-- Header -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Header</h3>
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <header class="bg-white px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+              <a href="#" class="text-xl font-bold text-gray-900">Logo</a>
+              <nav class="hidden md:flex items-center gap-6">
+                <a href="#" class="text-sm font-medium text-gray-900">Home</a>
+                <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">About</a>
+                <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">Blog</a>
+                <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
+              </nav>
+            </div>
+            <div class="flex items-center gap-4">
+              <button class="hidden md:block px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Login</button>
+              <button class="hidden md:block px-4 py-2 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors">Sign Up</button>
+              <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-600 hover:text-gray-900">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+              </button>
+            </div>
+          </header>
+        </div>
+      </div>
+
+      <!-- Header (Dark) -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Header (Dark)</h3>
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <header class="bg-gray-900 px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+              <a href="#" class="text-xl font-bold text-white">Logo</a>
+              <nav class="hidden md:flex items-center gap-6">
+                <a href="#" class="text-sm font-medium text-white">Home</a>
+                <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Blog</a>
+                <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a>
+              </nav>
+            </div>
+            <div class="flex items-center gap-4">
+              <button class="hidden md:block px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Login</button>
+              <button class="hidden md:block px-4 py-2 text-sm font-medium bg-white text-gray-900 rounded-full hover:bg-gray-100 transition-colors">Sign Up</button>
+              <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+              </button>
+            </div>
+          </header>
+        </div>
+      </div>
+
+      <!-- Hamburger Menu Icon -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Hamburger Menu Icon</h3>
+        <div class="flex items-center gap-6">
+          <button class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+          <button class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+          <span class="text-sm text-gray-500">Open / Close</span>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Mobile Menu</h3>
+        <div class="border border-gray-200 rounded-xl overflow-hidden max-w-xs">
+          <div class="bg-white">
+            <div class="px-4 py-3 border-b border-gray-100 flex items-center justify-between">
+              <span class="font-bold text-gray-900">Menu</span>
+              <button class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
+            </div>
+            <nav class="py-2">
+              <a href="#" class="block px-4 py-3 text-gray-900 font-medium bg-gray-50">Home</a>
+              <a href="#" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 transition-colors">About</a>
+              <a href="#" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 transition-colors">Blog</a>
+              <a href="#" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 transition-colors">Contact</a>
+            </nav>
+            <div class="px-4 py-4 border-t border-gray-100 space-y-2">
+              <button class="w-full px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">Login</button>
+              <button class="w-full px-4 py-2 text-sm font-medium bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Footer</h3>
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <footer class="bg-gray-50 px-6 py-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+              <div>
+                <h4 class="font-bold text-gray-900 mb-4">Logo</h4>
+                <p class="text-sm text-gray-600">サイトの説明文がここに入ります。</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-4">Links</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Home</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">About</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Blog</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Privacy</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Terms</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-4">SNS</h4>
+                <div class="flex gap-3">
+                  <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+                  </a>
+                  <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
+              © 2025 Your Name. All rights reserved.
+            </div>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Hero Section</h3>
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <div class="bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 px-8 py-16 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Welcome to My Site</h1>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">サブタイトルや説明文がここに入ります。訪問者にサイトの目的や価値を伝えます。</p>
+            <div class="flex justify-center gap-4">
+              <button class="px-6 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors">Get Started</button>
+              <button class="px-6 py-3 bg-white text-gray-900 font-medium rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Search Bar</h3>
+        <div class="space-y-4 max-w-md">
+          <div class="relative">
+            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <input type="search" placeholder="Search..." class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 transition-all">
+          </div>
+          <div class="relative">
+            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <input type="search" placeholder="Search..." class="w-full pl-12 pr-12 py-3 bg-gray-100 border border-transparent rounded-full focus:outline-none focus:bg-white focus:border-gray-300 transition-all">
+            <button class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-gray-900 text-white text-sm font-medium rounded-full">Search</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal / Dialog -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Modal / Dialog</h3>
+        <div class="relative bg-gray-900/50 rounded-xl p-8">
+          <div class="bg-white rounded-2xl shadow-xl max-w-md mx-auto overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
+              <h3 class="font-bold text-gray-900">Modal Title</h3>
+              <button class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
+            </div>
+            <div class="px-6 py-4">
+              <p class="text-gray-600 text-sm">モーダルの本文コンテンツがここに表示されます。確認メッセージやフォームなどを配置できます。</p>
+            </div>
+            <div class="px-6 py-4 bg-gray-50 flex justify-end gap-3">
+              <button class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Cancel</button>
+              <button class="px-4 py-2 text-sm font-medium bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Sidebar</h3>
+        <div class="border border-gray-200 rounded-xl overflow-hidden max-w-xs">
+          <div class="bg-white w-64 h-auto">
+            <div class="px-4 py-4 border-b border-gray-100">
+              <span class="font-bold text-gray-900">Dashboard</span>
+            </div>
+            <nav class="py-2">
+              <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-gray-900 bg-gray-100 font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                <span>Home</span>
+              </a>
+              <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-gray-600 hover:bg-gray-50 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                <span>Profile</span>
+              </a>
+              <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-gray-600 hover:bg-gray-50 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <span>Settings</span>
+              </a>
+              <hr class="my-2 border-gray-100">
+              <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-red-600 hover:bg-red-50 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                <span>Logout</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article Card -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Article Card</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="h-40 bg-gradient-to-br from-gray-200 to-gray-300"></div>
+            <div class="p-5">
+              <div class="flex gap-2 mb-3">
+                <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">Tech</span>
+              </div>
+              <h4 class="font-bold text-gray-900 mb-2">記事タイトルがここに入ります</h4>
+              <p class="text-sm text-gray-600 mb-4 line-clamp-2">記事の抜粋や説明文がここに表示されます。読者の興味を引く内容を...</p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <span>2025.01.21</span>
+                <a href="#" class="text-gray-900 hover:underline">Read more →</a>
+              </div>
+            </div>
+          </article>
+          <article class="flex bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="w-32 flex-shrink-0 bg-gradient-to-br from-gray-200 to-gray-300"></div>
+            <div class="p-4 flex flex-col justify-between">
+              <div>
+                <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Life</span>
+                <h4 class="font-bold text-gray-900 mt-2 mb-1 line-clamp-2">横長カードの記事タイトル</h4>
+                <p class="text-sm text-gray-600 line-clamp-2">記事の説明文...</p>
+              </div>
+              <span class="text-xs text-gray-500">2025.01.20</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Profile Card -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Profile Card</h3>
+        <div class="max-w-sm">
+          <div class="bg-white rounded-2xl shadow-md p-6 text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full mx-auto mb-4"></div>
+            <h4 class="font-bold text-gray-900 mb-1">Your Name</h4>
+            <p class="text-sm text-gray-500 mb-4">Web Developer / Designer</p>
+            <p class="text-sm text-gray-600 mb-4">自己紹介文がここに入ります。趣味や得意分野などを書きます。</p>
+            <div class="flex justify-center gap-3">
+              <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+              </a>
+              <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline / Log -->
+      <div class="mb-4">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Timeline / Log</h3>
+
+        <!-- Style 1: Vertical Timeline with Line -->
+        <div class="mb-8">
+          <h4 class="text-xs text-gray-400 mb-3">Vertical Timeline</h4>
+          <div class="relative pl-8 border-l-2 border-gray-200 space-y-8">
+            <div class="relative">
+              <div class="absolute -left-[25px] w-4 h-4 bg-gray-900 rounded-full border-4 border-white"></div>
+              <div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow">
+                <time class="text-xs text-gray-500 mb-1 block">2025.01.21</time>
+                <h4 class="font-bold text-gray-900 mb-1">新しい記事を投稿しました</h4>
+                <p class="text-sm text-gray-600">タイムラインの説明文がここに入ります。活動の詳細など...</p>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[25px] w-4 h-4 bg-gray-400 rounded-full border-4 border-white"></div>
+              <div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow">
+                <time class="text-xs text-gray-500 mb-1 block">2025.01.18</time>
+                <h4 class="font-bold text-gray-900 mb-1">プロジェクトをリリース</h4>
+                <p class="text-sm text-gray-600">新しいプロジェクトの詳細について...</p>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[25px] w-4 h-4 bg-gray-400 rounded-full border-4 border-white"></div>
+              <div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow">
+                <time class="text-xs text-gray-500 mb-1 block">2025.01.10</time>
+                <h4 class="font-bold text-gray-900 mb-1">イベントに参加</h4>
+                <p class="text-sm text-gray-600">参加したイベントの感想など...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Style 2: Simple Log List -->
+        <div class="mb-8">
+          <h4 class="text-xs text-gray-400 mb-3">Simple Log List</h4>
+          <div class="bg-white rounded-xl shadow-md divide-y divide-gray-100">
+            <a href="#" class="flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors group">
+              <time class="text-sm text-gray-500 w-24 flex-shrink-0">2025.01.21</time>
+              <span class="text-gray-900 group-hover:text-gray-600 transition-colors">新しい記事のタイトルがここに入ります</span>
+              <svg class="w-4 h-4 text-gray-400 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#" class="flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors group">
+              <time class="text-sm text-gray-500 w-24 flex-shrink-0">2025.01.18</time>
+              <span class="text-gray-900 group-hover:text-gray-600 transition-colors">プロジェクトのリリースについて</span>
+              <svg class="w-4 h-4 text-gray-400 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#" class="flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors group">
+              <time class="text-sm text-gray-500 w-24 flex-shrink-0">2025.01.10</time>
+              <span class="text-gray-900 group-hover:text-gray-600 transition-colors">イベントの振り返り</span>
+              <svg class="w-4 h-4 text-gray-400 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Style 3: Year-Month Grouped -->
+        <div class="mb-8">
+          <h4 class="text-xs text-gray-400 mb-3">Year-Month Grouped</h4>
+          <div class="space-y-6">
+            <div>
+              <h5 class="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
+                <span class="w-2 h-2 bg-gray-900 rounded-full"></span>
+                2025年1月
+              </h5>
+              <ul class="space-y-2 pl-4 border-l border-gray-200">
+                <li>
+                  <a href="#" class="flex items-baseline gap-3 py-1 text-gray-700 hover:text-gray-900 transition-colors">
+                    <time class="text-xs text-gray-400 w-8">21日</time>
+                    <span>新しい記事のタイトル</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-baseline gap-3 py-1 text-gray-700 hover:text-gray-900 transition-colors">
+                    <time class="text-xs text-gray-400 w-8">18日</time>
+                    <span>プロジェクトのリリース</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-baseline gap-3 py-1 text-gray-700 hover:text-gray-900 transition-colors">
+                    <time class="text-xs text-gray-400 w-8">10日</time>
+                    <span>イベント参加レポート</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
+                <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                2024年12月
+              </h5>
+              <ul class="space-y-2 pl-4 border-l border-gray-200">
+                <li>
+                  <a href="#" class="flex items-baseline gap-3 py-1 text-gray-700 hover:text-gray-900 transition-colors">
+                    <time class="text-xs text-gray-400 w-8">25日</time>
+                    <span>年末のご挨拶</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-baseline gap-3 py-1 text-gray-700 hover:text-gray-900 transition-colors">
+                    <time class="text-xs text-gray-400 w-8">15日</time>
+                    <span>12月のまとめ</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Style 4: Card-based Timeline -->
+        <div>
+          <h4 class="text-xs text-gray-400 mb-3">Card Timeline with Tags</h4>
+          <div class="space-y-4">
+            <article class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">Tech</span>
+                <time class="text-xs text-gray-500">2025.01.21</time>
+              </div>
+              <h4 class="font-bold text-gray-900 mb-2">新しい技術を試してみた</h4>
+              <p class="text-sm text-gray-600 line-clamp-2">最近気になっていた技術を実際に使ってみた感想と、学んだことをまとめました...</p>
+            </article>
+            <article class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 text-xs font-medium bg-green-100 text-green-700 rounded-full">Life</span>
+                <time class="text-xs text-gray-500">2025.01.18</time>
+              </div>
+              <h4 class="font-bold text-gray-900 mb-2">週末の過ごし方</h4>
+              <p class="text-sm text-gray-600 line-clamp-2">リフレッシュのために出かけた先での出来事など...</p>
+            </article>
+            <article class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 text-xs font-medium bg-purple-100 text-purple-700 rounded-full">Work</span>
+                <time class="text-xs text-gray-500">2025.01.10</time>
+              </div>
+              <h4 class="font-bold text-gray-900 mb-2">プロジェクト完了報告</h4>
+              <p class="text-sm text-gray-600 line-clamp-2">長期間取り組んでいたプロジェクトがついに完了しました...</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Status Colors Section -->
     <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
       <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4">Status Colors</h2>
