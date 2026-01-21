@@ -1,0 +1,17 @@
+{
+  "name": "@takayaso/tokens",
+  "version": "1.0.0",
+  "description": "Design tokens for takayaso.com",
+  "type": "module",
+  "exports": {
+    "./variables.css": "./variables.css",
+    "./preset": "./preset.js"
+  },
+  "files": [
+    "variables.css",
+    "preset.js"
+  ],
+  "keywords": ["design-tokens", "tailwind", "css-variables"],
+  "author": "takayaso",
+  "license": "MIT"
+}

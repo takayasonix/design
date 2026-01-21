@@ -1,0 +1,148 @@
+/**
+ * takayaso.com Design Tokens
+ *
+ * Usage:
+ *   @import '@takayaso/tokens/variables.css';
+ *
+ * Override per project:
+ *   :root { --color-bg-base: #fef3c7; }
+ */
+
+:root {
+  /* ========================================
+     Background Colors
+     ======================================== */
+  --color-bg-base: #f3f4f6;           /* gray-100 */
+  --color-bg-surface: #ffffff;         /* white */
+  --color-bg-muted: #e5e7eb;          /* gray-200 */
+  --color-bg-subtle: #f9fafb;         /* gray-50 */
+
+  /* Gradient (hero, header backgrounds) */
+  --color-bg-gradient-from: #f3f4f6;  /* gray-100 */
+  --color-bg-gradient-via: #e5e7eb;   /* gray-200 */
+  --color-bg-gradient-to: #d1d5db;    /* gray-300 */
+
+  /* ========================================
+     Text Colors
+     ======================================== */
+  --color-text-primary: #111827;       /* gray-900 */
+  --color-text-secondary: #4b5563;     /* gray-600 */
+  --color-text-muted: #6b7280;         /* gray-500 */
+  --color-text-subtle: #9ca3af;        /* gray-400 */
+  --color-text-inverse: #ffffff;       /* white */
+
+  /* ========================================
+     Border Colors
+     ======================================== */
+  --color-border-default: #d1d5db;     /* gray-300 */
+  --color-border-muted: #e5e7eb;       /* gray-200 */
+  --color-border-subtle: #f3f4f6;      /* gray-100 */
+
+  /* ========================================
+     Interactive Colors (Buttons, Links)
+     ======================================== */
+  --color-primary: #111827;            /* gray-900 */
+  --color-primary-hover: #1f2937;      /* gray-800 */
+  --color-primary-text: #ffffff;
+
+  --color-secondary: #ffffff;
+  --color-secondary-hover: #f9fafb;    /* gray-50 */
+  --color-secondary-text: #111827;     /* gray-900 */
+  --color-secondary-border: #d1d5db;   /* gray-300 */
+
+  --color-link: #111827;               /* gray-900 */
+  --color-link-hover: #374151;         /* gray-700 */
+
+  /* ========================================
+     Status Colors
+     ======================================== */
+  /* Success */
+  --color-success-bg: #f0fdf4;         /* green-50 */
+  --color-success-border: #bbf7d0;     /* green-200 */
+  --color-success-text: #15803d;       /* green-700 */
+  --color-success: #22c55e;            /* green-500 */
+
+  /* Warning */
+  --color-warning-bg: #fefce8;         /* yellow-50 */
+  --color-warning-border: #fef08a;     /* yellow-200 */
+  --color-warning-text: #a16207;       /* yellow-700 */
+  --color-warning: #eab308;            /* yellow-500 */
+
+  /* Error */
+  --color-error-bg: #fef2f2;           /* red-50 */
+  --color-error-border: #fecaca;       /* red-200 */
+  --color-error-text: #b91c1c;         /* red-700 */
+  --color-error: #ef4444;              /* red-500 */
+
+  /* Info */
+  --color-info-bg: #eff6ff;            /* blue-50 */
+  --color-info-border: #bfdbfe;        /* blue-200 */
+  --color-info-text: #1d4ed8;          /* blue-700 */
+  --color-info: #3b82f6;               /* blue-500 */
+
+  /* ========================================
+     Form Colors
+     ======================================== */
+  --color-input-bg: #ffffff;
+  --color-input-border: #d1d5db;       /* gray-300 */
+  --color-input-border-focus: #111827; /* gray-900 */
+  --color-input-placeholder: #9ca3af;  /* gray-400 */
+  --color-input-disabled-bg: #f3f4f6;  /* gray-100 */
+
+  /* ========================================
+     Shadows
+     ======================================== */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ========================================
+     Border Radius
+     ======================================== */
+  --radius-sm: 0.375rem;               /* 6px */
+  --radius-md: 0.5rem;                 /* 8px */
+  --radius-lg: 0.75rem;                /* 12px */
+  --radius-xl: 1rem;                   /* 16px */
+  --radius-2xl: 1.5rem;                /* 24px */
+  --radius-full: 9999px;
+
+  /* ========================================
+     Spacing
+     ======================================== */
+  --space-1: 0.25rem;                  /* 4px */
+  --space-2: 0.5rem;                   /* 8px */
+  --space-3: 0.75rem;                  /* 12px */
+  --space-4: 1rem;                     /* 16px */
+  --space-5: 1.25rem;                  /* 20px */
+  --space-6: 1.5rem;                   /* 24px */
+  --space-8: 2rem;                     /* 32px */
+
+  /* ========================================
+     Typography
+     ======================================== */
+  --font-sans: 'Lato', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --text-xs: 0.75rem;                  /* 12px */
+  --text-sm: 0.875rem;                 /* 14px */
+  --text-base: 1rem;                   /* 16px */
+  --text-lg: 1.125rem;                 /* 18px */
+  --text-xl: 1.25rem;                  /* 20px */
+  --text-2xl: 1.5rem;                  /* 24px */
+  --text-3xl: 1.875rem;                /* 30px */
+  --text-4xl: 2.25rem;                 /* 36px */
+
+  /* ========================================
+     Transitions
+     ======================================== */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* ========================================
+     Z-index
+     ======================================== */
+  --z-dropdown: 50;
+  --z-modal: 100;
+  --z-toast: 150;
+}

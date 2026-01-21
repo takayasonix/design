@@ -39,9 +39,9 @@ export { boxShadow };
 export type { BoxShadow } from './shadows';
 
 // Transitions
-import { transitionDuration, transitionTimingFunction } from './transitions';
-export { transitionDuration, transitionTimingFunction };
-export type { TransitionDuration, TransitionTimingFunction } from './transitions';
+import { transitionDuration, transitionTimingFunction, keyframes } from './transitions';
+export { transitionDuration, transitionTimingFunction, keyframes };
+export type { TransitionDuration, TransitionTimingFunction, Keyframes } from './transitions';
 
 // Breakpoints
 import { breakpoints, container } from './breakpoints';
@@ -62,6 +62,7 @@ export const tokens = {
   boxShadow,
   transitionDuration,
   transitionTimingFunction,
+  keyframes,
   breakpoints,
   container,
 } as const;
