@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System Preview - takayaso.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       CSS Variables from Design Tokens
+       ============================================ */
+    :root {
+      /* Gray scale */
+      --gray-50: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-200: #e5e5e5;
+      --gray-300: #d4d4d4;
+      --gray-400: #a3a3a3;
+      --gray-500: #737373;
+      --gray-600: #525252;
+      --gray-700: #404040;
+      --gray-800: #262626;
+      --gray-900: #171717;
+
+      /* Button - Primary */
+      --btn-primary-bg: #171717;
+      --btn-primary-bg-hover: #262626;
+      --btn-primary-bg-active: #404040;
+      --btn-primary-text: #ffffff;
+      --btn-primary-border: #171717;
+
+      /* Button - Secondary */
+      --btn-secondary-bg: #ffffff;
+      --btn-secondary-bg-hover: #f5f5f5;
+      --btn-secondary-bg-active: #e5e5e5;
+      --btn-secondary-text: #171717;
+      --btn-secondary-border: #d4d4d4;
+
+      /* Button - Ghost */
+      --btn-ghost-bg: transparent;
+      --btn-ghost-bg-hover: #f5f5f5;
+      --btn-ghost-bg-active: #e5e5e5;
+      --btn-ghost-text: #171717;
+
+      /* Button - Outline */
+      --btn-outline-bg: transparent;
+      --btn-outline-bg-hover: #171717;
+      --btn-outline-text: #171717;
+      --btn-outline-text-hover: #ffffff;
+      --btn-outline-border: #171717;
+
+      /* Button - Destructive */
+      --btn-destructive-bg: #ef4444;
+      --btn-destructive-bg-hover: #dc2626;
+      --btn-destructive-bg-active: #b91c1c;
+      --btn-destructive-text: #ffffff;
+
+      /* Button - Disabled */
+      --btn-disabled-bg: #e5e5e5;
+      --btn-disabled-text: #a3a3a3;
+      --btn-disabled-border: #e5e5e5;
+
+      /* Form */
+      --input-bg: #ffffff;
+      --input-bg-disabled: #f5f5f5;
+      --input-border: #d4d4d4;
+      --input-border-hover: #a3a3a3;
+      --input-border-focus: #171717;
+      --input-border-error: #ef4444;
+      --input-text: #171717;
+      --input-placeholder: #a3a3a3;
+      --focus-ring: #171717;
+
+      /* Text */
+      --text-primary: #171717;
+      --text-secondary: #525252;
+      --text-muted: #737373;
+      --text-disabled: #a3a3a3;
+
+      /* Border */
+      --border-default: #e5e5e5;
+      --border-strong: #d4d4d4;
+
+      /* Surface */
+      --surface-default: #ffffff;
+      --surface-sunken: #fafafa;
+      --surface-overlay: rgba(0, 0, 0, 0.5);
+
+      /* Status */
+      --success: #22c55e;
+      --success-bg: #f0fdf4;
+      --warning: #eab308;
+      --warning-bg: #fefce8;
+      --error: #ef4444;
+      --error-bg: #fef2f2;
+      --info: #3b82f6;
+      --info-bg: #eff6ff;
+
+      /* Brand */
+      --brand-twitter: #60a5fa;
+      --brand-instagram: #ec4899;
+      --brand-note: #22c55e;
+      --brand-github: #404040;
+    }
+
+    /* ============================================
+       Base Styles
+       ============================================ */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Lato', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--surface-sunken);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gray-900);
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .header {
+      margin-bottom: 48px;
+    }
+
+    .header p {
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    .section {
+      background: var(--surface-default);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .component-group {
+      margin-bottom: 32px;
+    }
+
+    .component-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .component-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .color-swatch {
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-default);
+    }
+
+    .color-swatch-color {
+      height: 64px;
+    }
+
+    .color-swatch-info {
+      padding: 12px;
+      background: white;
+      font-size: 12px;
+    }
+
+    .color-swatch-name {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .color-swatch-value {
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+
+    /* ============================================
+       Buttons
+       ============================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    /* Size variants */
+    .btn-sm {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+
+    .btn-lg {
+      font-size: 16px;
+      padding: 14px 28px;
+    }
+
+    /* Primary */
+    .btn-primary {
+      background: var(--btn-primary-bg);
+      color: var(--btn-primary-text);
+      border-color: var(--btn-primary-border);
+    }
+    .btn-primary:hover {
+      background: var(--btn-primary-bg-hover);
+    }
+    .btn-primary:active {
+      background: var(--btn-primary-bg-active);
+    }
+
+    /* Secondary */
+    .btn-secondary {
+      background: var(--btn-secondary-bg);
+      color: var(--btn-secondary-text);
+      border-color: var(--btn-secondary-border);
+    }
+    .btn-secondary:hover {
+      background: var(--btn-secondary-bg-hover);
+    }
+    .btn-secondary:active {
+      background: var(--btn-secondary-bg-active);
+    }
+
+    /* Ghost */
+    .btn-ghost {
+      background: var(--btn-ghost-bg);
+      color: var(--btn-ghost-text);
+      border-color: transparent;
+    }
+    .btn-ghost:hover {
+      background: var(--btn-ghost-bg-hover);
+    }
+    .btn-ghost:active {
+      background: var(--btn-ghost-bg-active);
+    }
+
+    /* Outline */
+    .btn-outline {
+      background: var(--btn-outline-bg);
+      color: var(--btn-outline-text);
+      border-color: var(--btn-outline-border);
+    }
+    .btn-outline:hover {
+      background: var(--btn-outline-bg-hover);
+      color: var(--btn-outline-text-hover);
+    }
+
+    /* Destructive */
+    .btn-destructive {
+      background: var(--btn-destructive-bg);
+      color: var(--btn-destructive-text);
+      border-color: var(--btn-destructive-bg);
+    }
+    .btn-destructive:hover {
+      background: var(--btn-destructive-bg-hover);
+      border-color: var(--btn-destructive-bg-hover);
+    }
+    .btn-destructive:active {
+      background: var(--btn-destructive-bg-active);
+    }
+
+    /* Disabled */
+    .btn:disabled,
+    .btn-disabled {
+      background: var(--btn-disabled-bg);
+      color: var(--btn-disabled-text);
+      border-color: var(--btn-disabled-border);
+      cursor: not-allowed;
+    }
+
+    /* ============================================
+       Links
+       ============================================ */
+    .link {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.15s ease;
+    }
+    .link:hover {
+      color: var(--text-secondary);
+    }
+
+    .link-accent {
+      color: #2563eb;
+    }
+    .link-accent:hover {
+      color: #1d4ed8;
+    }
+
+    .link-muted {
+      color: var(--text-muted);
+    }
+    .link-muted:hover {
+      color: var(--text-primary);
+    }
+
+    /* ============================================
+       Form Elements
+       ============================================ */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    .form-input {
+      width: 100%;
+      max-width: 320px;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--input-text);
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: 6px;
+      transition: border-color 0.15s ease;
+    }
+
+    .form-input::placeholder {
+      color: var(--input-placeholder);
+    }
+
+    .form-input:hover {
+      border-color: var(--input-border-hover);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--input-border-focus);
+      box-shadow: 0 0 0 3px rgba(23, 23, 23, 0.1);
+    }
+
+    .form-input:disabled {
+      background: var(--input-bg-disabled);
+      color: var(--text-disabled);
+      cursor: not-allowed;
+    }
+
+    .form-input-error {
+      border-color: var(--input-border-error);
+    }
+    .form-input-error:focus {
+      border-color: var(--input-border-error);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+
+    .form-error {
+      font-size: 12px;
+      color: var(--error);
+      margin-top: 6px;
+    }
+
+    .form-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Textarea */
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    /* Select */
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23525252' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 40px;
+    }
+
+    /* Checkbox & Radio */
+    .form-check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .form-check-input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--gray-900);
+      cursor: pointer;
+    }
+
+    .form-check-label {
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+
+    /* ============================================
+       Cards
+       ============================================ */
+    .card {
+      background: var(--surface-default);
+      border: 1px solid var(--border-default);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .card-elevated {
+      border: none;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .card-description {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    /* ============================================
+       Alerts
+       ============================================ */
+    .alert {
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .alert-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+    }
+
+    .alert-success {
+      background: var(--success-bg);
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+
+    .alert-warning {
+      background: var(--warning-bg);
+      color: #854d0e;
+      border: 1px solid #fef08a;
+    }
+
+    .alert-error {
+      background: var(--error-bg);
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    .alert-info {
+      background: var(--info-bg);
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+    }
+
+    /* ============================================
+       Badges
+       ============================================ */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 9999px;
+    }
+
+    .badge-default {
+      background: var(--gray-100);
+      color: var(--text-secondary);
+    }
+
+    .badge-primary {
+      background: var(--gray-900);
+      color: white;
+    }
+
+    .badge-success {
+      background: var(--success-bg);
+      color: #166534;
+    }
+
+    .badge-warning {
+      background: var(--warning-bg);
+      color: #854d0e;
+    }
+
+    .badge-error {
+      background: var(--error-bg);
+      color: #991b1b;
+    }
+
+    /* ============================================
+       Typography Preview
+       ============================================ */
+    .text-primary { color: var(--text-primary); }
+    .text-secondary { color: var(--text-secondary); }
+    .text-muted { color: var(--text-muted); }
+    .text-disabled { color: var(--text-disabled); }
+
+    .typography-sample {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-default);
+    }
+    .typography-sample:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .typography-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      font-family: monospace;
+    }
+
+    /* ============================================
+       Brand Colors
+       ============================================ */
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      color: white;
+      transition: opacity 0.15s ease;
+    }
+    .brand-link:hover {
+      opacity: 0.9;
+    }
+
+    .brand-twitter { background: var(--brand-twitter); }
+    .brand-instagram { background: var(--brand-instagram); }
+    .brand-note { background: var(--brand-note); }
+    .brand-github { background: var(--brand-github); }
+
+    /* ============================================
+       Divider
+       ============================================ */
+    .divider {
+      height: 1px;
+      background: var(--border-default);
+      margin: 24px 0;
+    }
+
+    /* ============================================
+       Avatar
+       ============================================ */
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    .avatar-sm { width: 32px; height: 32px; font-size: 12px; }
+    .avatar-lg { width: 64px; height: 64px; font-size: 24px; }
+
+    /* ============================================
+       Tag/Chip
+       ============================================ */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 12px;
+      background: var(--gray-100);
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .tag-outline {
+      background: transparent;
+      border: 1px solid var(--border-strong);
+    }
+
+    /* ============================================
+       Toggle/Switch
+       ============================================ */
+    .toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      background: var(--gray-300);
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .toggle::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .toggle-active {
+      background: var(--gray-900);
+    }
+
+    .toggle-active::after {
+      transform: translateX(20px);
+    }
+
+    /* ============================================
+       Skeleton
+       ============================================ */
+    .skeleton {
+      background: linear-gradient(90deg, var(--gray-200) 25%, var(--gray-100) 50%, var(--gray-200) 75%);
+      background-size: 200% 100%;
+      animation: skeleton-loading 1.5s infinite;
+      border-radius: 4px;
+    }
+
+    @keyframes skeleton-loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ============================================
+       Tooltip (CSS only)
+       ============================================ */
+    .tooltip-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 6px 10px;
+      background: var(--gray-900);
+      color: white;
+      font-size: 12px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-bottom: 8px;
+    }
+
+    .tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: var(--gray-900);
+    }
+
+    /* ============================================
+       Progress Bar
+       ============================================ */
+    .progress {
+      height: 8px;
+      background: var(--gray-200);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--gray-900);
+      border-radius: 9999px;
+      transition: width 0.3s ease;
+    }
+
+    .progress-success .progress-bar { background: var(--success); }
+    .progress-warning .progress-bar { background: var(--warning); }
+    .progress-error .progress-bar { background: var(--error); }
+
+    /* ============================================
+       Table
+       ============================================ */
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .table th,
+    .table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .table th {
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--surface-sunken);
+    }
+
+    .table tr:hover td {
+      background: var(--gray-50);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Design System Preview</h1>
+    <p>takayaso.com - Grayscale-centric, minimal accent colors</p>
+  </div>
+
+  <!-- ============================================
+       Buttons
+       ============================================ -->
+  <section class="section">
+    <h2>Buttons</h2>
+
+    <div class="component-group">
+      <h3>Variants</h3>
+      <div class="component-row">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-outline">Outline</button>
+        <button class="btn btn-destructive">Destructive</button>
+        <button class="btn" disabled>Disabled</button>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <h3>Sizes</h3>
+      <div class="component-row">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Medium</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <h3>With Icons</h3>
+      <div class="component-row">
+        <button class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          Add Item
+        </button>
+        <button class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download
+        </button>
+        <button class="btn btn-destructive">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          Delete
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Links
+       ============================================ -->
+  <section class="section">
+    <h2>Links</h2>
+
+    <div class="component-group">
+      <h3>Variants</h3>
+      <div class="component-row" style="gap: 24px;">
+        <a href="#" class="link">Default Link</a>
+        <a href="#" class="link link-accent">Accent Link</a>
+        <a href="#" class="link link-muted">Muted Link</a>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <h3>In Context</h3>
+      <p style="max-width: 600px; color: var(--text-secondary);">
+        This is a paragraph with an <a href="#" class="link">inline link</a> that demonstrates how links appear within body text. You can also use <a href="#" class="link link-accent">accent links</a> for emphasis.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Form Elements
+       ============================================ -->
+  <section class="section">
+    <h2>Form Elements</h2>
+
+    <div class="component-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <div>
+        <div class="form-group">
+          <label class="form-label">Text Input</label>
+          <input type="text" class="form-input" placeholder="Enter text...">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">With Hint</label>
+          <input type="email" class="form-input" placeholder="email@example.com">
+          <p class="form-hint">We'll never share your email.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Error State</label>
+          <input type="text" class="form-input form-input-error" value="Invalid input">
+          <p class="form-error">This field is required.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Disabled</label>
+          <input type="text" class="form-input" value="Disabled input" disabled>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-group">
+          <label class="form-label">Select</label>
+          <select class="form-input form-select">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Textarea</label>
+          <textarea class="form-input form-textarea" placeholder="Enter message..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Checkboxes</label>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label class="form-check">
+              <input type="checkbox" class="form-check-input" checked>
+              <span class="form-check-label">Option A</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" class="form-check-input">
+              <span class="form-check-label">Option B</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Radio Buttons</label>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label class="form-check">
+              <input type="radio" name="radio" class="form-check-input" checked>
+              <span class="form-check-label">Choice 1</span>
+            </label>
+            <label class="form-check">
+              <input type="radio" name="radio" class="form-check-input">
+              <span class="form-check-label">Choice 2</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Cards
+       ============================================ -->
+  <section class="section">
+    <h2>Cards</h2>
+
+    <div class="component-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="card">
+        <h4 class="card-title">Default Card</h4>
+        <p class="card-description">A simple card with border styling.</p>
+      </div>
+
+      <div class="card card-elevated">
+        <h4 class="card-title">Elevated Card</h4>
+        <p class="card-description">A card with shadow for emphasis.</p>
+      </div>
+
+      <div class="card" style="background: var(--surface-sunken);">
+        <h4 class="card-title">Sunken Card</h4>
+        <p class="card-description">A subtle background variant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Alerts
+       ============================================ -->
+  <section class="section">
+    <h2>Alerts / Feedback</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 16px; max-width: 600px;">
+      <div class="alert alert-success">
+        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div>
+          <strong>Success!</strong> Your changes have been saved successfully.
+        </div>
+      </div>
+
+      <div class="alert alert-warning">
+        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div>
+          <strong>Warning!</strong> Please review your input before proceeding.
+        </div>
+      </div>
+
+      <div class="alert alert-error">
+        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div>
+          <strong>Error!</strong> Something went wrong. Please try again.
+        </div>
+      </div>
+
+      <div class="alert alert-info">
+        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <div>
+          <strong>Info:</strong> Here's some helpful information for you.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Badges
+       ============================================ -->
+  <section class="section">
+    <h2>Badges</h2>
+
+    <div class="component-row">
+      <span class="badge badge-default">Default</span>
+      <span class="badge badge-primary">Primary</span>
+      <span class="badge badge-success">Success</span>
+      <span class="badge badge-warning">Warning</span>
+      <span class="badge badge-error">Error</span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Tags
+       ============================================ -->
+  <section class="section">
+    <h2>Tags / Chips</h2>
+
+    <div class="component-row">
+      <span class="tag">Design</span>
+      <span class="tag">Development</span>
+      <span class="tag tag-outline">Outline Tag</span>
+      <span class="tag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        With Icon
+      </span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Toggle / Switch
+       ============================================ -->
+  <section class="section">
+    <h2>Toggle / Switch</h2>
+
+    <div class="component-row">
+      <div class="toggle"></div>
+      <div class="toggle toggle-active"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Avatar
+       ============================================ -->
+  <section class="section">
+    <h2>Avatar</h2>
+
+    <div class="component-row">
+      <div class="avatar avatar-sm">T</div>
+      <div class="avatar">TY</div>
+      <div class="avatar avatar-lg">TY</div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Progress Bar
+       ============================================ -->
+  <section class="section">
+    <h2>Progress Bar</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 16px; max-width: 400px;">
+      <div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Default (60%)</div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 60%;"></div>
+        </div>
+      </div>
+      <div class="progress-success">
+        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Success (100%)</div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 100%;"></div>
+        </div>
+      </div>
+      <div class="progress-warning">
+        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Warning (40%)</div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 40%;"></div>
+        </div>
+      </div>
+      <div class="progress-error">
+        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Error (20%)</div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 20%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Skeleton
+       ============================================ -->
+  <section class="section">
+    <h2>Skeleton Loading</h2>
+
+    <div style="display: flex; gap: 16px; align-items: flex-start;">
+      <div class="skeleton" style="width: 48px; height: 48px; border-radius: 50%;"></div>
+      <div style="flex: 1; max-width: 300px;">
+        <div class="skeleton" style="height: 16px; width: 60%; margin-bottom: 8px;"></div>
+        <div class="skeleton" style="height: 12px; width: 100%; margin-bottom: 4px;"></div>
+        <div class="skeleton" style="height: 12px; width: 80%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Tooltip
+       ============================================ -->
+  <section class="section">
+    <h2>Tooltip</h2>
+
+    <div class="component-row">
+      <div class="tooltip-wrapper">
+        <div class="tooltip">This is a tooltip</div>
+        <button class="btn btn-secondary">Hover me</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Table
+       ============================================ -->
+  <section class="section">
+    <h2>Table</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Takayasu Nasu</td>
+          <td><span class="badge badge-success">Active</span></td>
+          <td>Designer</td>
+          <td><a href="#" class="link">Edit</a></td>
+        </tr>
+        <tr>
+          <td>John Doe</td>
+          <td><span class="badge badge-warning">Pending</span></td>
+          <td>Developer</td>
+          <td><a href="#" class="link">Edit</a></td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td><span class="badge badge-default">Inactive</span></td>
+          <td>Manager</td>
+          <td><a href="#" class="link">Edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============================================
+       Typography
+       ============================================ -->
+  <section class="section">
+    <h2>Typography</h2>
+
+    <div class="component-group">
+      <h3>Text Colors</h3>
+      <div class="typography-sample">
+        <div class="typography-label">text-primary (#171717)</div>
+        <p class="text-primary" style="font-size: 16px;">Primary text for main content and headings.</p>
+      </div>
+      <div class="typography-sample">
+        <div class="typography-label">text-secondary (#525252)</div>
+        <p class="text-secondary" style="font-size: 16px;">Secondary text for supporting information.</p>
+      </div>
+      <div class="typography-sample">
+        <div class="typography-label">text-muted (#737373)</div>
+        <p class="text-muted" style="font-size: 16px;">Muted text for less important content.</p>
+      </div>
+      <div class="typography-sample">
+        <div class="typography-label">text-disabled (#a3a3a3)</div>
+        <p class="text-disabled" style="font-size: 16px;">Disabled text for inactive elements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Brand Colors
+       ============================================ -->
+  <section class="section">
+    <h2>Brand / SNS Colors</h2>
+
+    <div class="component-row">
+      <a href="#" class="brand-link brand-twitter">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Twitter
+      </a>
+      <a href="#" class="brand-link brand-instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+      <a href="#" class="brand-link brand-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        note
+      </a>
+      <a href="#" class="brand-link brand-github">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Color Palette
+       ============================================ -->
+  <section class="section">
+    <h2>Color Palette</h2>
+
+    <div class="component-group">
+      <h3>Gray Scale</h3>
+      <div class="component-grid" style="grid-template-columns: repeat(5, 1fr);">
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #fafafa;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">gray-50</div>
+            <div class="color-swatch-value">#fafafa</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #f5f5f5;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">gray-100</div>
+            <div class="color-swatch-value">#f5f5f5</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #e5e5e5;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">gray-200</div>
+            <div class="color-swatch-value">#e5e5e5</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #d4d4d4;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">gray-300</div>
+            <div class="color-swatch-value">#d4d4d4</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #a3a3a3;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">gray-400</div>
+            <div class="color-swatch-value">#a3a3a3</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #737373;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">gray-500</div>
+            <div class="color-swatch-value">#737373</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #525252;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">gray-600</div>
+            <div class="color-swatch-value">#525252</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #404040;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">gray-700</div>
+            <div class="color-swatch-value">#404040</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #262626;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">gray-800</div>
+            <div class="color-swatch-value">#262626</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #171717; border: 1px solid #e5e5e5;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">gray-900</div>
+            <div class="color-swatch-value">#171717</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <h3>Semantic Colors</h3>
+      <div class="component-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #22c55e;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">success</div>
+            <div class="color-swatch-value">#22c55e</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #eab308;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">warning</div>
+            <div class="color-swatch-value">#eab308</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #ef4444;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">error</div>
+            <div class="color-swatch-value">#ef4444</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #3b82f6;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">info</div>
+            <div class="color-swatch-value">#3b82f6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 14px;">
+    Design System Preview - takayaso.com
+  </footer>
+</body>
+</html>
