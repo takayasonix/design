@@ -233,6 +233,147 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>
     </section>
 
+    <!-- Typography / Markdown Section -->
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4">Typography / Markdown</h2>
+
+      <!-- Headings -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Headings</h3>
+        <div class="space-y-4 border-l-4 border-gray-200 pl-6">
+          <div>
+            <code class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded"># H1</code>
+            <h1 class="text-4xl font-bold text-gray-900 mt-2">Heading 1</h1>
+          </div>
+          <div>
+            <code class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">## H2</code>
+            <h2 class="text-3xl font-bold text-gray-900 mt-2">Heading 2</h2>
+          </div>
+          <div>
+            <code class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">### H3</code>
+            <h3 class="text-2xl font-bold text-gray-900 mt-2">Heading 3</h3>
+          </div>
+          <div>
+            <code class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">#### H4</code>
+            <h4 class="text-xl font-bold text-gray-900 mt-2">Heading 4</h4>
+          </div>
+          <div>
+            <code class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">##### H5</code>
+            <h5 class="text-lg font-bold text-gray-900 mt-2">Heading 5</h5>
+          </div>
+          <div>
+            <code class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">###### H6</code>
+            <h6 class="text-base font-bold text-gray-900 mt-2">Heading 6</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paragraph -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Paragraph</h3>
+        <p class="text-gray-700 leading-relaxed">
+          これは本文テキストのサンプルです。<strong class="font-bold text-gray-900">太字テキスト</strong>と<em class="italic">斜体テキスト</em>を含みます。
+          また<a href="#" class="text-gray-900 underline hover:text-gray-600 transition-colors">インラインリンク</a>もあります。
+          <code class="text-sm bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded font-mono">インラインコード</code>も表示できます。
+        </p>
+      </div>
+
+      <!-- Lists -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Lists</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <code class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded mb-3 inline-block">Unordered List</code>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 mt-2">
+              <li>リストアイテム 1</li>
+              <li>リストアイテム 2
+                <ul class="list-disc list-inside ml-6 mt-2 space-y-1 text-gray-600">
+                  <li>ネストアイテム A</li>
+                  <li>ネストアイテム B</li>
+                </ul>
+              </li>
+              <li>リストアイテム 3</li>
+            </ul>
+          </div>
+          <div>
+            <code class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded mb-3 inline-block">Ordered List</code>
+            <ol class="list-decimal list-inside text-gray-700 space-y-2 mt-2">
+              <li>最初のアイテム</li>
+              <li>2番目のアイテム
+                <ol class="list-decimal list-inside ml-6 mt-2 space-y-1 text-gray-600">
+                  <li>サブアイテム 1</li>
+                  <li>サブアイテム 2</li>
+                </ol>
+              </li>
+              <li>3番目のアイテム</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blockquote -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Blockquote</h3>
+        <blockquote class="border-l-4 border-gray-300 pl-6 py-2 bg-gray-50 rounded-r-xl">
+          <p class="text-gray-700 italic leading-relaxed">
+            「引用テキストはこのようにスタイリングされます。左ボーダーとグレー背景で視覚的に区別します。」
+          </p>
+          <cite class="text-sm text-gray-500 mt-2 block">— 引用元</cite>
+        </blockquote>
+      </div>
+
+      <!-- Code Block -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Code Block</h3>
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded-xl overflow-x-auto font-mono text-sm leading-relaxed"><code>// コードブロックのサンプル
+function greet(name: string): string {
+  return \`Hello, \${name}!\`;
+}
+
+console.log(greet('World'));</code></pre>
+      </div>
+
+      <!-- Horizontal Rule -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Horizontal Rule</h3>
+        <code class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded mb-3 inline-block">---</code>
+        <hr class="border-t border-gray-300 mt-4">
+      </div>
+
+      <!-- Table -->
+      <div class="mb-4">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Table</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b-2 border-gray-300">
+                <th class="py-3 px-4 font-bold text-gray-900 bg-gray-50">Header 1</th>
+                <th class="py-3 px-4 font-bold text-gray-900 bg-gray-50">Header 2</th>
+                <th class="py-3 px-4 font-bold text-gray-900 bg-gray-50">Header 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 text-gray-700">Cell 1-1</td>
+                <td class="py-3 px-4 text-gray-700">Cell 1-2</td>
+                <td class="py-3 px-4 text-gray-700">Cell 1-3</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 text-gray-700">Cell 2-1</td>
+                <td class="py-3 px-4 text-gray-700">Cell 2-2</td>
+                <td class="py-3 px-4 text-gray-700">Cell 2-3</td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 text-gray-700">Cell 3-1</td>
+                <td class="py-3 px-4 text-gray-700">Cell 3-2</td>
+                <td class="py-3 px-4 text-gray-700">Cell 3-3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <!-- Cards Section -->
     <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
       <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4">Cards</h2>
