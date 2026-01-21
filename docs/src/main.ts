@@ -494,6 +494,191 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>
     </section>
 
+    <!-- UI Components Section -->
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4">UI Components</h2>
+
+      <!-- Badge / Tag -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Badge / Tag</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full">Default</span>
+          <span class="px-3 py-1 text-xs font-medium bg-gray-900 text-white rounded-full">Dark</span>
+          <span class="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">Info</span>
+          <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Success</span>
+          <span class="px-3 py-1 text-xs font-medium bg-yellow-100 text-yellow-700 rounded-full">Warning</span>
+          <span class="px-3 py-1 text-xs font-medium bg-red-100 text-red-700 rounded-full">Error</span>
+          <span class="px-3 py-1 text-xs font-medium border border-gray-300 text-gray-700 rounded-full">Outline</span>
+        </div>
+      </div>
+
+      <!-- Avatar -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Avatar</h3>
+        <div class="flex items-end gap-4">
+          <div class="w-8 h-8 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center text-white text-xs font-bold">S</div>
+          <div class="w-10 h-10 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center text-white text-sm font-bold">M</div>
+          <div class="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center text-white text-base font-bold">L</div>
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center text-white text-lg font-bold">XL</div>
+          <div class="relative">
+            <div class="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full"></div>
+            <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading / Spinner -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Loading / Spinner</h3>
+        <div class="flex items-center gap-6">
+          <div class="w-6 h-6 border-2 border-gray-200 border-t-gray-900 rounded-full animate-spin"></div>
+          <div class="w-8 h-8 border-2 border-gray-200 border-t-gray-900 rounded-full animate-spin"></div>
+          <div class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full">
+            <div class="w-4 h-4 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin"></div>
+            <span class="text-sm text-gray-600">Loading...</span>
+          </div>
+          <div class="flex gap-1">
+            <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+            <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+            <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skeleton -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Skeleton</h3>
+        <div class="space-y-4">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gray-200 rounded-full animate-pulse"></div>
+            <div class="flex-1 space-y-2">
+              <div class="h-4 bg-gray-200 rounded w-1/3 animate-pulse"></div>
+              <div class="h-3 bg-gray-200 rounded w-1/2 animate-pulse"></div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="h-4 bg-gray-200 rounded w-full animate-pulse"></div>
+            <div class="h-4 bg-gray-200 rounded w-5/6 animate-pulse"></div>
+            <div class="h-4 bg-gray-200 rounded w-4/6 animate-pulse"></div>
+          </div>
+          <div class="h-32 bg-gray-200 rounded-xl animate-pulse"></div>
+        </div>
+      </div>
+
+      <!-- Toast -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Toast / Notification</h3>
+        <div class="space-y-3 max-w-sm">
+          <div class="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl shadow-lg">
+            <div class="w-5 h-5 text-green-500">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <p class="text-sm text-gray-700 flex-1">保存しました</p>
+            <button class="text-gray-400 hover:text-gray-600">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-xl shadow-lg">
+            <div class="w-5 h-5 text-red-500">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </div>
+            <p class="text-sm text-red-700 flex-1">エラーが発生しました</p>
+            <button class="text-red-400 hover:text-red-600">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breadcrumb -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Breadcrumb</h3>
+        <nav class="flex items-center gap-2 text-sm">
+          <a href="#" class="text-gray-500 hover:text-gray-900 transition-colors">Home</a>
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          <a href="#" class="text-gray-500 hover:text-gray-900 transition-colors">Blog</a>
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          <span class="text-gray-900 font-medium">記事タイトル</span>
+        </nav>
+      </div>
+
+      <!-- Pagination -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Pagination</h3>
+        <div class="flex items-center gap-2">
+          <button class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-gray-900 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button class="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">1</button>
+          <button class="w-10 h-10 flex items-center justify-center bg-gray-900 text-white rounded-lg">2</button>
+          <button class="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">3</button>
+          <span class="text-gray-400">...</span>
+          <button class="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">10</button>
+          <button class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Tab</h3>
+        <div class="border-b border-gray-200">
+          <nav class="flex gap-6">
+            <button class="pb-3 text-sm font-medium text-gray-900 border-b-2 border-gray-900">Tab 1</button>
+            <button class="pb-3 text-sm font-medium text-gray-500 hover:text-gray-700 border-b-2 border-transparent hover:border-gray-300 transition-colors">Tab 2</button>
+            <button class="pb-3 text-sm font-medium text-gray-500 hover:text-gray-700 border-b-2 border-transparent hover:border-gray-300 transition-colors">Tab 3</button>
+          </nav>
+        </div>
+        <div class="mt-4 p-4 bg-gray-50 rounded-xl">
+          <p class="text-gray-700 text-sm">Tab 1 のコンテンツがここに表示されます。</p>
+        </div>
+      </div>
+
+      <!-- Tooltip -->
+      <div class="mb-8">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Tooltip</h3>
+        <div class="flex items-center gap-8">
+          <div class="relative group">
+            <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">Hover me</button>
+            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+              ツールチップテキスト
+              <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-600">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </button>
+            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+              ヘルプ情報
+              <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dropdown -->
+      <div class="mb-4">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Dropdown Menu</h3>
+        <div class="flex gap-4">
+          <div class="relative">
+            <button class="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+              <span class="text-sm text-gray-700">Menu</span>
+              <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-xl shadow-lg py-1 z-10">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Option 1</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Option 2</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Option 3</a>
+              <hr class="my-1 border-gray-200">
+              <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Status Colors Section -->
     <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
       <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4">Status Colors</h2>
