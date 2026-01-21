@@ -1,40 +1,41 @@
 /**
  * Typography tokens
+ * Based on takayaso.com design system
+ *
+ * Primary: Lato (Latin) + Noto Sans JP (Japanese)
  */
 export const fontFamily = {
   sans: [
-    'Inter',
-    'ui-sans-serif',
-    'system-ui',
+    'Lato',
+    'Noto Sans JP',
     '-apple-system',
     'BlinkMacSystemFont',
     'Segoe UI',
     'Roboto',
-    'Helvetica Neue',
-    'Arial',
     'sans-serif',
   ],
   mono: [
-    'JetBrains Mono',
-    'ui-monospace',
-    'SFMono-Regular',
-    'Menlo',
-    'Monaco',
-    'Consolas',
-    'Liberation Mono',
-    'Courier New',
+    'Lato',
     'monospace',
   ],
 } as const;
 
 export const fontSize = {
+  // Extra small - used for timestamps, labels
   xs: '0.75rem',     // 12px
+  // Small - secondary text
   sm: '0.875rem',    // 14px
+  // Base - body text
   base: '1rem',      // 16px
+  // Large - emphasized body, h3
   lg: '1.125rem',    // 18px
+  // Extra large - h2
   xl: '1.25rem',     // 20px
+  // 2x large - h1 mobile
   '2xl': '1.5rem',   // 24px
+  // 3x large - h1 desktop
   '3xl': '1.875rem', // 30px
+  // Display sizes (rarely used)
   '4xl': '2.25rem',  // 36px
   '5xl': '3rem',     // 48px
 } as const;

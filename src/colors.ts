@@ -1,23 +1,12 @@
 /**
  * Color tokens
+ * Based on takayaso.com design system
+ *
+ * Design philosophy: Grayscale-centric, minimal accent colors
  */
 export const colors = {
-  // Primary
-  primary: {
-    50: '#eff6ff',
-    100: '#dbeafe',
-    200: '#bfdbfe',
-    300: '#93c5fd',
-    400: '#60a5fa',
-    500: '#3b82f6',
-    600: '#2563eb',
-    700: '#1d4ed8',
-    800: '#1e40af',
-    900: '#1e3a8a',
-  },
-
-  // Neutral / Gray
-  neutral: {
+  // Gray scale (Tailwind default, main palette)
+  gray: {
     50: '#fafafa',
     100: '#f5f5f5',
     200: '#e5e5e5',
@@ -30,7 +19,25 @@ export const colors = {
     900: '#171717',
   },
 
-  // Semantic colors
+  // Semantic / Theme colors
+  background: {
+    light: '#ffffff',
+    dark: '#0a0a0a',
+  },
+  foreground: {
+    light: '#171717',
+    dark: '#ededed',
+  },
+
+  // Brand colors (for SNS links etc.)
+  brand: {
+    twitter: '#60a5fa',    // blue-400
+    instagram: '#ec4899',  // pink-500
+    note: '#22c55e',       // green-500
+    github: '#404040',     // gray-700
+  },
+
+  // Semantic colors (for feedback/status)
   success: {
     light: '#86efac',
     DEFAULT: '#22c55e',
